@@ -26,25 +26,26 @@ function assign() {
  * Second  with the popular events at the location.
 */
 function callAPI(inputPara) {
-	var url = 'https://localhost/luaCode';
+	var url = 'https://localhost:5000/';
 	
 	// Clearing the eventText variable
 	questionText = "";
 
 	// Request Lua server to get questions
-	makeAJAXCall(url);
+	makeAJAXCall(url, inputPara);
 }
 
 /*
  * Makes the AJAX call, handles the spinner actions and calls the write function
 */
-function makeAJAXCall(url) {
+function makeAJAXCall(url, inputPara) {
 	$.ajax({
-		type: "GET",
+		type: "POST",
 		url: url,
 		async: true,
 		crossDomain: true,
 		processData: false,
+		data: { sentence: inputPara },
 		success: function(result, status, xhr) {
 			/*
 			 * After the AJAX Request, we remove the spinner
