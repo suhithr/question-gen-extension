@@ -1,0 +1,67 @@
+body {
+	background-image: url("static/tessellation.jpg");
+    background-repeat: repeat;
+    -webkit-animation: animatedBackground 10s linear infinite;
+    animation: animatedBackground 10s linear infinite;
+}
+.box {
+	width: 600px;
+	padding: 10px;
+	font-family: 'Roboto';
+}
+.form-container {
+	margin: auto;
+	width: 250px;
+}
+#spinner-container {
+	width: 50px;
+	margin: auto;
+}
+.result-container {
+	width: 550px;
+	margin: auto;
+	border-color: #FF6F00;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+.event {
+	font-size: 18px;
+	line-height: 110%;
+	font-family: 'Roboto';
+}
+.weekend {
+	border-style: solid;
+	border-color: #ef1c67;
+	border-width: 3px;
+	padding: 5px;
+	padding-bottom: 10px;
+	border-radius: 4px;
+	margin-bottom: 5px;
+}
+.heading {
+	font-size: 20px;
+	text-align: center;
+	margin: 0 auto;
+	width: 200px !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: 'Roboto';
+}
+.prev {
+	color: #6F6B5E;
+	font-size: 17px;
+	font-weight: 2;
+}
+@-webkit-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
