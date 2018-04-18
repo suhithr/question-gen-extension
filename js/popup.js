@@ -26,7 +26,7 @@ function assign() {
  * Second  with the popular events at the location.
 */
 function callAPI(inputPara) {
-	var url = 'https://localhost:5000/';
+	var url = 'http://127.0.0.1:5000/';
 	
 	// Clearing the eventText variable
 	questionText = "";
@@ -44,8 +44,7 @@ function makeAJAXCall(url, inputPara) {
 		url: url,
 		async: true,
 		crossDomain: true,
-		processData: false,
-		data: { sentence: inputPara },
+		data: { 'sentence': inputPara },
 		success: function(result, status, xhr) {
 			/*
 			 * After the AJAX Request, we remove the spinner
@@ -67,12 +66,14 @@ function makeAJAXCall(url, inputPara) {
  * Writes the recieved events into the popup and saves them into the localStorage
 */
 function writeEvents(result) {
-	
+	console.log(result)
+	res = result
+	console.log(res)
 	questionText += '<div class="questions"><div class="heading">Questions</div>';
 	
 	var i = 0;
-	while (i < result["num"]) {
-		questionText += '<span class="que"><li>' + result["questions"][i]["text"] + '</li></span><br>';
+	while (i < res["num"]) {
+		questionText += '<span class="que"><li>' + res["question"] + '</li></span><br>';
 		i += 1;
 	}
 
